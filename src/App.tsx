@@ -27,6 +27,14 @@ export default class App extends Component<{}, State> {
   }
   render(): React.ReactNode {
     return <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+      </table>
       {
         this.state.products.map(p => <Product product={p}/>)
       }
