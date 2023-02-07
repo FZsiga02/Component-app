@@ -3,16 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import Main from './components/Main';
 import Footer from './components/Footer';
-
-interface Product {
-  category: string;
-  price: string;
-  stocked: boolean;
-  name: string;
-}
+import { Product as ProductInterface } from './Product';
+import Product from './components/Product';
 
 interface State {
-  products: Product[];
+  products: ProductInterface[];
 }
 
 export default class App extends Component<{}, State> {
@@ -33,7 +28,7 @@ export default class App extends Component<{}, State> {
   render(): React.ReactNode {
     return <div>
       {
-        this.state.products.map(p => <div>Ide jön valami</div>)
+        this.state.products.map(p => <Product product={p}/>)
       }
       <Footer />
     </div>
