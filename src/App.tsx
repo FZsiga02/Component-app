@@ -5,6 +5,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import { Product as ProductInterface } from './Product';
 import Product from './components/Product';
+import ErrorMessage from './components/ErrorMessage';
 
 interface State {
   products: ProductInterface[];
@@ -21,7 +22,7 @@ export default class App extends Component<{}, State> {
         {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
         {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
         {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
-        {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
+        {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"},
       ]
     }
   }
@@ -34,10 +35,13 @@ export default class App extends Component<{}, State> {
             <th>Price</th>
           </tr>
         </thead>
-      </table>
-      {
+        <tbody>
+        {
         this.state.products.map(p => <Product product={p}/>)
-      }
+        }
+        </tbody>
+      </table>
+      <ErrorMessage message='Kevés a termék'></ErrorMessage>
       <Footer />
     </div>
   }
