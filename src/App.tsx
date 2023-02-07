@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import { Product as ProductInterface } from './Product';
 import Product from './components/Product';
 import ErrorMessage from './components/ErrorMessage';
+import Card from './components/Card';
 
 interface State {
   products: ProductInterface[];
@@ -42,6 +43,7 @@ export default class App extends Component<{}, State> {
         </tbody>
       </table>
       <ErrorMessage message='Kevés a termék'></ErrorMessage>
+      <Card caption='Kutya' description='Labrador' image='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Yellow_Labrador_Retriever_2.jpg/640px-Yellow_Labrador_Retriever_2.jpg'></Card>
       <Footer />
     </div>
   }
